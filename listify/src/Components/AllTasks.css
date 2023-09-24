@@ -44,11 +44,11 @@
   
   /* Styling for In Progress tasks */
   .task-card.in-progress {
-    background-color: lightgreen;
+    background-color: rgb(158, 240, 158);
   }
   
   /* Styling for Completed tasks */
   .task-card.completed {
-    background-color: grey;
+    background-color: rgb(180, 175, 175);
   }
   

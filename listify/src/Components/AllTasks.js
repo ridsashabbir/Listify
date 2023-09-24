@@ -8,18 +8,21 @@ function AllTasks() {
       title: "Todo Title 1",
       description: "Todo Description 1",
       status: "In Progress",
+      timestamp: new Date(), // Add a timestamp for each task
     },
     {
       id: 2,
       title: "Todo Title 2",
       description: "Todo Description 2",
       status: "In Progress",
+      timestamp: new Date(),
     },
     {
       id: 3,
       title: "Todo Title 1",
       description: "Todo Description 1",
       status: "Completed",
+      timestamp: new Date(),
     },
   ]);
 
@@ -42,6 +45,9 @@ function AllTasks() {
             <h2>{todo.title}</h2>
             <p>{todo.description}</p>
             <p className="status">Status: {todo.status}</p>
+            <p className="timestamp">
+              Added on: {todo.timestamp.toLocaleString()}
+            </p>
             <button
               className="delete-button"
               onClick={() => deleteTodo(todo.id)}
