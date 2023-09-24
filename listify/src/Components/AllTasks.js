@@ -8,7 +8,7 @@ function AllTasks() {
       title: "Todo Title 1",
       description: "Todo Description 1",
       status: "In Progress",
-      timestamp: new Date(), // Add a timestamp for each task
+      timestamp: new Date(),
     },
     {
       id: 2,
@@ -27,8 +27,21 @@ function AllTasks() {
   ]);
 
   const deleteTodo = (todoId) => {
-    // Use setTodos to remove the todo with the specified ID
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== todoId));
+  };
+
+  const toggleStatus = (todoId) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === todoId
+          ? {
+              ...todo,
+              status:
+                todo.status === "In Progress" ? "Completed" : "In Progress",
+            }
+          : todo
+      )
+    );
   };
 
   return (
@@ -53,6 +66,13 @@ function AllTasks() {
               onClick={() => deleteTodo(todo.id)}
             >
               Delete
+            </button>
+            <button
+              className="toggle-button"
+              onClick={() => toggleStatus(todo.id)}
+            >
+              Toggle Status to{" "}
+              {todo.status === "In Progress" ? "Completed" : "In Progress"}
             </button>
           </div>
         ))}
