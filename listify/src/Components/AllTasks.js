@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./AllTasks.css"; // Import the CSS file
 
 function AllTasks() {
   const [todos, setTodos] = useState([
@@ -12,25 +13,44 @@ function AllTasks() {
       id: 2,
       title: "Todo Title 2",
       description: "Todo Description 2",
-      status: "Complete",
+      status: "In Progress",
+    },
+    {
+      id: 3,
+      title: "Todo Title 1",
+      description: "Todo Description 1",
+      status: "Completed",
     },
   ]);
 
   const deleteTodo = (todoId) => {
-    // Perform delete todo logic here
+    // Use setTodos to remove the todo with the specified ID
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== todoId));
   };
 
   return (
     <div>
       <h1>All Tasks</h1>
-      {todos.map((todo) => (
-        <div key={todo.id}>
-          <h2>{todo.title}</h2>
-          <p>{todo.description}</p>
-          <p>Status: {todo.status}</p>
-          <button onClick={() => deleteTodo(todo.id)}>Delete</button>
-        </div>
-      ))}
+      <div className="all-tasks-container">
+        {todos.map((todo) => (
+          <div
+            key={todo.id}
+            className={`task-card ${
+              todo.status === "In Progress" ? "in-progress" : "completed"
+            }`}
+          >
+            <h2>{todo.title}</h2>
+            <p>{todo.description}</p>
+            <p className="status">Status: {todo.status}</p>
+            <button
+              className="delete-button"
+              onClick={() => deleteTodo(todo.id)}
+            >
+              Delete
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link
+import { Link } from "react-router-dom";
+import "./AddTodos.css"; // Import the CSS file
 
 function AddTodos() {
   const [todoTitle, setTodoTitle] = useState("");
@@ -11,7 +12,7 @@ function AddTodos() {
   };
 
   return (
-    <div>
+    <div className="add-todos-container">
       <h1>Add Todos</h1>
       <form onSubmit={handleAddTodo}>
         <div>
@@ -35,7 +36,9 @@ function AddTodos() {
           <button type="submit">Add Todo</button>
         </div>
       </form>
-      Go to see all of your todos <Link to="/alltasks">All Tasks</Link>{" "}
+      <div className="link">
+        Go to see all of your todos <Link to="/alltasks">All Tasks</Link>
+      </div>
     </div>
   );
 }
