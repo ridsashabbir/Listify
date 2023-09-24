@@ -6,7 +6,7 @@
   justify-content: space-between;
   min-height: 100vh; 
   background-image: url("./assets/login.jpg"); 
-  background-size: 60%;
+  background-size: 50%;
   background-position: right;
   background-repeat: no-repeat;
   background-color: RGB(224, 223, 255);
@@ -15,7 +15,7 @@
 
 
 .login-form {
-  background-color: rgba(255, 255, 255, 0.7); 
+  background-color: #fff; 
   padding: 50px;
   border-radius: 10px;
   margin-left: 15%;
@@ -40,7 +40,7 @@
 }
 
 .login-form button {
-  margin-top: 10px;
+  margin-top: 20px;
   padding: 10px 20px;
   background-color: #007bff; /* Button color */
   color: #fff; /* Button text color */
