@@ -1,10 +1,11 @@
 import "./App.css";
 import React from "react";
+import Signup from "./Components/Signup";
 
 function App() {
   return (
     <>
-      <h1>this is heading</h1>
+      <Signup />
     </>
   );
 }
