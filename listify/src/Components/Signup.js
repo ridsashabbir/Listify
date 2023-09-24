@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"; // Import Link
 
 function Signup() {
   const [username, setUsername] = useState("");
@@ -55,6 +56,7 @@ function Signup() {
           <button type="submit">Signup</button>
         </div>
       </form>
+      Done signin <Link to="/addtodos">Add Todos</Link>{" "}
     </div>
   );
 }
