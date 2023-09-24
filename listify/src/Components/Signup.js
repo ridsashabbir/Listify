@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link
+import { Link } from "react-router-dom";
+import "./Signup.css"; // Import the CSS file
 
 function Signup() {
   const [username, setUsername] = useState("");
@@ -13,7 +14,7 @@ function Signup() {
   };
 
   return (
-    <div>
+    <div className="signup-container">
       <h1>Signup</h1>
       <form onSubmit={handleSignup}>
         <div>
@@ -56,7 +57,9 @@ function Signup() {
           <button type="submit">Signup</button>
         </div>
       </form>
-      Done signin <Link to="/addtodos">Add Todos</Link>{" "}
+      <div className="link">
+        Done signin <Link to="/addtodos">Add Todos</Link>
+      </div>
     </div>
   );
 }
